@@ -1,0 +1,145 @@
+body {
+    width: 98%;
+    height: 98vh;
+    
+    background-color: #abffeb;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+
+    font-size: 30px;
+
+    margin: 0;
+
+    padding: 10px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+
+    background-color: #cbb4ff;
+}
+
+.header {
+    height: 50%;
+    width: 90%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionLine {
+    width: 90%;
+    height: 5px;
+    border-top: 2px dashed black;
+}
+
+.overview {
+    box-sizing: border-box;
+
+    height: 100%;
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+p {
+    width: 80%;
+    height: 100%;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.projectDescription {
+    width: 75%;
+}
+
+.projects {
+    width: 90%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.projectList {
+    display:flex;
+}
+
+.imgHolder {
+    border: 1px solid blue;
+    border-radius: 5px;
+    width: 60%;
+    height: 100%;
+    margin-left: 7.5%;
+}
+
+.project {
+    list-style-type: none;
+
+    width: 100%;
+    height: 100%;
+}
+
+.contactSection {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 75%;
+}
+
+.contactButtons {
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+
+    margin: 1.5%;
+
+    width: 100%;
+
+    font-weight: 400;
+    font-size: 36px;
+}
+
+.contact {
+    background-color: #9497fd;
+
+    width: 55px;
+    height: 50px;
+
+    border: 1px solid #5a5da7;
+    border-radius: 5px;
+
+    padding: 5px;
+}
+
+.githubLogo, .linkedinLogo, .gmailLogo {
+    height: 100%;
+    width: 100%;
+}
