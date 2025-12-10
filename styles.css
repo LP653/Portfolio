@@ -1,8 +1,55 @@
+:root {
+    --base-color: hsl(203, 63%, 78%);
+    --text-color: hsl(211, 93%, 16%);
+    --primary-color: #ae69fd;
+    --secondary-color: #5e88d8;
+    --accent-color: #7440b0;
+}
+
+.darkmode {
+     --base-color: hsl(211, 93%, 16%);
+    --text-color: hsl(203, 63%, 78%);
+    --primary-color: #ff2693;
+    --secondary-color: #934cff;
+    --accent-color: #c448cb;
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+
+    background-color: var(--accent-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch svg {
+    fill: var(--text-color);
+}
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
 body {
-    background-color: hsl(203, 63%, 78%);
+    background-color: var(--base-color);
     font-family: 'Arial', sans-serif;
     margin: 0;
-    color: hsl(211, 93%, 16%);
+    color: var(--text-color);
 }
 
 .opening-screen {
@@ -19,8 +66,9 @@ body {
     height: 330px;
 
     border-radius: 150px;
+    box-shadow: -5px -5px 10px 0 var(--secondary-color),
+                5px 10px 25px 0 var(--primary-color);
 }
-/* Shadow under image */
 
 .overTitle, .blurb, .projTitle, .card, .contactTitle, .contact-cards {
     transition: opacity 1.5s ease-out, transform 1s ease-out;
@@ -28,12 +76,17 @@ body {
 
 h1 {
     font-size: 64px;
+    text-shadow: -5px -5px 10px var(--secondary-color),
+                5px 10px 25px var(--primary-color);
+    
+    padding: 10px;
+    
+    border-bottom: 2px outset var(--accent-color);
 }
 
 h3 {
     font-size: 36px;
 }
-
 
 .overview-section {
     display: flex;
@@ -48,6 +101,8 @@ h3 {
 
     max-width: 1000px;
     margin: 0 auto;
+
+    border-radius: 50px;
 }
 
 .blurb {
@@ -91,11 +146,10 @@ h3 {
     text-align: center;  
 }
 
-.card, .contactButton {
+.card, .contactButton, .overview-section {
     
     color: hsla(212, 60%, 83%, 0.891);
-    background: linear-gradient(135deg, #5e88d8, #ae69fd);
-    /* dark mode background: linear-gradient(135deg, #ff2693, #934cff); */
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
 .contact-section {
@@ -132,10 +186,27 @@ h3 {
 .contactButton {
     border-radius: 25px;
     padding: 10px;
+    opacity: 0.9;
 }
 
 .contactButton.linked {
     padding-right: 5px;
+}
+
+.autoShow {
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 100vh;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hidden {

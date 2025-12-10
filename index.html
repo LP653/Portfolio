@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexis Pope Portfolio Website</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script type="text/javascript" src="darkmode.js" defer></script>
 </head>
 <body>
-
+    <button id="theme-switch">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+    </button>
+    
     <!-- Make profile image grow into blurry background at Overview and then fade to blue color at end of webpage -->
     <section class="opening-screen">
         <h1>Alexis Pope</h1>
@@ -17,9 +21,9 @@
 
     <!-- Figure out how to make light/dark mode buttons up top -->
 
-    <section class="overview-section">
-        <h3 class="overTitle hidden">Overview</h3>
-        <p class="blurb hidden">
+    <section class="overview-section autoShow">
+        <h3 class="overTitle">Overview</h3> <!--hidden-->
+        <p class="blurb"> <!--hidden-->
             I am a lifelong learner and passionate tinkerer.
             I have two B.S. degrees in Electrical Engineering and Computational Physics, and have passed the F.E. ECE exam.
             Also a passionate musician, I have projects in the work that overlap these fields (i.e. oscilloscope music, spectrum analyzers).
@@ -28,24 +32,24 @@
         </p>
     </section>
 
-    <section class="project-section">
-        <h3 class="projTitle hidden">Projects</h3>
+    <section class="project-section autoShow">
+        <h3 class="projTitle">Projects</h3>
         <section class="project-cards">
-            <div class="card hidden">
+            <div class="card">
                 <p>8x8 LED Array (Arduino)</p>
             </div>
-            <div class="card hidden">
+            <div class="card">
                 <p>128x64 OLED Function Display (ESP32)</p>
             </div>
-            <div class="card hidden">
+            <div class="card">
                 <p>Bluetooth Controlled Car (ESP32)</p>
             </div>
         </section>
     </section>
 
     <section class="contact-section">
-        <h3 class="contactTitle hidden">Links / Contact</h3>
-        <section class="contact-cards hidden">
+        <h3 class="contactTitle">Links / Contact</h3>
+        <section class="contact-cards">
             <!-- Make buttons function as links rather than embedded links -->
             <a href="https://github.com/LP653" target="_blank"><button class="contactButton git">
                 <img class="gitLogo" src="./images/github-mark.png" />
@@ -54,7 +58,7 @@
                 <img class="linkedLogo" src="./images/InBug-Black.png" />
             </button></a>
             <a href="mailto:alexispope693@gmail.com" target="_blank"><button class="contactButton gmail">
-                <img class="gmailLogo" src="./images/Gmail_icon_(2020).png" />
+                <img class="gmailLogo" src="./images/Black_Gmail_icon_(2020).png" />
             </button></a>
         </section>
     </section>
