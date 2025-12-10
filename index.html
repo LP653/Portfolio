@@ -8,8 +8,11 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+
+    <!-- Make profile image grow into blurry background at Overview and then fade to blue color at end of webpage -->
     <section class="opening-screen">
         <h1>Alexis Pope</h1>
+        <img class="profile-image" src="./images/profile_image.jpg"/>
     </section>
 
     <!-- Figure out how to make light/dark mode buttons up top -->
@@ -43,15 +46,16 @@
     <section class="contact-section">
         <h3 class="contactTitle hidden">Links / Contact</h3>
         <section class="contact-cards hidden">
-            <button class="contactButton git">
-                <a href="https://github.com/LP653" target="_blank"><img class="gitLogo" src="./images/github-mark.png" /></a>
-            </button>
-            <button class="contactButton linked">
-                <a href="https://www.linkedin.com/in/alexis-pope-3887b2257/" target="_blank"><img class="linkedLogo" src="./images/InBug-Black.png" /></a>
-            </button>
-            <button class="contactButton gmail">
-                <a href="mailto:alexispope693@gmail.com" target="_blank"><img class="gmailLogo" src="./images/Gmail_icon_(2020).png" /></a>
-            </button>
+            <!-- Make buttons function as links rather than embedded links -->
+            <a href="https://github.com/LP653" target="_blank"><button class="contactButton git">
+                <img class="gitLogo" src="./images/github-mark.png" />
+            </button></a>
+            <a href="https://www.linkedin.com/in/alexis-pope-3887b2257/" target="_blank"><button class="contactButton linked">
+                <img class="linkedLogo" src="./images/InBug-Black.png" />
+            </button></a>
+            <a href="mailto:alexispope693@gmail.com" target="_blank"><button class="contactButton gmail">
+                <img class="gmailLogo" src="./images/Gmail_icon_(2020).png" />
+            </button></a>
         </section>
     </section>
 </body>

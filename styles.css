@@ -1,28 +1,39 @@
 body {
-    background-color: #1a202c;
+    background-color: hsl(203, 63%, 78%);
     font-family: 'Arial', sans-serif;
     margin: 0;
-    color: #ffffff;
+    color: hsl(211, 93%, 16%);
 }
 
 .opening-screen {
     height: 100vh;
     display: flex;
+
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.profile-image {
+    width: 440px;
+    height: 330px;
+
+    border-radius: 150px;
+}
+/* Shadow under image */
+
 .overTitle, .blurb, .projTitle, .card, .contactTitle, .contact-cards {
-    transition: opacity 2s ease-out, transform 2s ease-out;
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 64px;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 36px;
 }
+
 
 .overview-section {
     display: flex;
@@ -30,13 +41,19 @@ h3 {
     justify-content: center;
     align-items: center;
 
-    height: 75vh;
+    height: 50vh;
     width: 75%;
 
     padding: 50px;
 
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.blurb {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
 }
 
 .project-section {
@@ -48,7 +65,7 @@ h3 {
     padding: 50px;
     margin: 0 auto;
 
-    height: 75vh;
+    height: 90vh;
     width: 75%;
     max-width: 1000px;
 }
@@ -65,14 +82,20 @@ h3 {
 }
 
 .card {
-    background: linear-gradient(135deg, #4c51bf, #6b46c1);
     padding: 20px 5%;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
     font-size: 14px;
     font-weight: bold;
-    text-align: center;
+    text-align: center;  
+}
+
+.card, .contactButton {
+    
+    color: hsla(212, 60%, 83%, 0.891);
+    background: linear-gradient(135deg, #5e88d8, #ae69fd);
+    /* dark mode background: linear-gradient(135deg, #ff2693, #934cff); */
 }
 
 .contact-section {
@@ -80,8 +103,16 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 50px;
+    margin: 0 auto;
+
+    height: 25vh;
+    width: 75%;
+    max-width: 1000px;
 }
 
+/* Make logos in sillouhette with same color as text */
 .contact-cards {
     display: grid;
     width: 80%;
