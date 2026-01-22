@@ -1,0 +1,35 @@
+@import url('../projectStyles.css');
+
+.description {
+    margin: 350px 0 150px 0;
+    width: 95%;
+}
+
+.parts-cards {
+    grid-template-columns: 25% 25% 25%;
+}
+
+.code-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    height: 110vh;
+    width: 95%;
+    max-width: 950px;
+}
+
+.code {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.conclusion {
+    margin-top: 60px;
+    height: 50vh;
+    max-width: 950px;
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="../../darkmode.js" defer></script>
+    <title>BlueTooth Remoted Controlled Car</title>
+</head>
+<body>
+    <div class="header">
+        <button id="theme-switch">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+        </button>
+        <h1 class="project-title">Bluetooth Controlled Car</h1>
+        <div class="nav-container">
+            <input class="checkbox" type="checkbox" name="menu_check" id="menu_check" />
+            <div class="navbar">
+                <div class="one-bar"></div>
+                <div class="two-bar"></div>
+                <div class="three-bar"></div>
+            </div>
+            <div class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li class="submenu-trigger"><a href="../../index.html#projects">Projects</a></li>
+                <ul class="project-submenu">
+                    <li><a href="../LED_Array/la.html">LED Array -</a></li>
+                    <li><a href="../OLED_Function_Display/ofd.html">OLED -</a></li>
+                    <li><a href="../Bluetooth_Controlled_Car/bcc.html">RC Car -</a></li>
+                </ul>
+                <li><a href="../../index.html#experience">Experience</a></li>
+            </div>
+        </div>
+    </div>
+
+    <section class="description">
+        <h3 class="section-title">Description</h3>
+        <div class="card description-card">
+            <div class="img-holder"><img class="demo" src="images/demo.gif"></div>
+            <p>This is my prototype for an RC Car named: <b>The Rat</b>.</p>
+            <div class="grid-pics">
+                <img src="" class="desc-pic"/>
+                <img src="" class="desc-pic"/>
+                <img src="" class="desc-pic"/>
+                
+                <img src="" class="desc-pic"/>
+                <img src="" class="desc-pic"/>
+                <img src="" class="desc-pic"/>
+            </div>
+            <p>The car's axle uses gears to rotate with a <b>28BYJ-48 5V Stepper Motor</b> and its <b>ULN2003 motor driver</b> which is controlled using an <b>ESP32 Devkit V1 DOIT</b>.</p>
+            <p>It was assembled by <a href="" target="_blank">Estela Guzman</a>. The body is built out of wood and extremities (u-bolts under the body securing the axles, microcontroller, motor, and driver) are screwed/bolted on to secure it. The 9V is not tied down to make change out easy.</p>
+            <p>The ESP32 triggers the motor using <a href="" target="_blank">Arduino's</a> <kbd>Stepper.h</kbd> library with an XBOX One remote controller that is connected through BlueTooth using <a href="" target="_blank">Ricardo Quesada</a>'s <kbd>Bluepad32.h</kbd></p>
+        </div>
+        <div class="card inspiration-card autoShow">
+            <h3 class="subtitle">Inspiration</h3>
+            <p>This project is largely inspired by the following articles:</p>
+            <p><a href="https://bluepad32.readthedocs.io/en/latest/plat_arduino/" target="_blank">Stepper Motor Control</a></p>
+            <img src="images/bluepad_instructions.png" class="inspo-img"/>
+            <p><a href="https://lastminuteengineers.com/28byj48-stepper-motor-arduino-tutorial/" target="_blank">BlueTooth Game Controller</a></p>
+            <img src="images/stepper_motor_instructions.png" class="inspo-img" />
+        </div>
+    </section>
+
+    <section class="parts">
+        <h3 class="section-title autoShow">Parts List</h3>
+        <section class="autoShow parts-section">
+            <p class="subtitle">Main Components</p>
+            <div class="parts-cards">
+                <div class="part card">
+                    <p>ESP32 Devkit V1 DOIT</p>
+                    <img src="images/esp32_store_pic.png" class="part-img" />
+                </div>
+                <div class="part card">
+                    <p>Stepper Motor</p>
+                    <img src="images/Stepper_motor_store.png" class="part-img" />
+                </div>
+                <div class="part card">
+                    <p>XBox One Controller</p>
+                    <img src="images/xbox.png" class="part-img" />
+                </div>
+            </div>
+        </section>
+        <section class="autoShow parts-section">
+            <p class="subtitle">Power Supply</p>
+            <div class="parts-cards">
+                <div class="part card">
+                    <p>AMS1117 Voltage Regulator</p>
+                    <img src="images/ams1117_voltage_regulator.png" class="part-img" />
+                </div>
+                <div class="part card">
+                    <p>9V Battery</p>
+                    <img src="images/9v_battery.png" class="part-img" />
+                </div>
+                <div class="part card">
+                    <p>2x Capacitors</p>
+                    <img src="images/capacitor.png" class="part-img" />
+                </div>
+            </div>
+        </section>
+        <section class="autoShow parts-section">
+            <p class="subtitle">Car Parts</p>
+            <div class="parts-cards" id="car-parts">
+                <div class="part card">
+                    <p>Wheels & Axles</p>
+                    <img src="images/wheels_and_axles.png" class="part-img" />
+                </div>
+                <div class="part card">
+                    <p>Gears</p>
+                    <img src="images/gears.png" class="part-img" />
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="wiring autoShow">
+        <h3 class="section-title">Wiring</h3>
+        <div class="pinouts">
+            <div class="pinout card autoShow">
+                <p class="pinout-label subtitle">ESP32 Pinout</p>
+                <img class="pinout-image" src="images/ESP32-Board-PINOUT-with-30-pins.png"/>
+            </div>
+            <div class="pinout card autoShow">
+                <p class="pinout-label subtitle">28BYJ Stepper Motor Driver Pinout</p>
+                <img class="pinout-image" src="images/ULN2003 Driver Pinout.png"/>
+            </div>
+            <div class="pinout card autoShow">
+                <p class="pinout-label subtitle">AMS1117 Voltage Regulator Pinout</p>
+                <img class="pinout-image" src="images/Voltage_Regulator_Diagram.png"/>
+            </div>
+        </div>
+        <div class="wiring-diagram card autoShow">
+            <p class="wiring-label subtitle">Overall Wiring Diagram</p>
+            <img class="wiring-image" src="images/WIring_Diagram.png" />
+        </div>
+    </section>
+
+    <section class="pseudocode">
+        <h3 class="section-title autoShow">Psuedocode</h3>
+        <div class="card code autoShow">
+            <code markup="tt">
+                <pre>
+#include < Stepper.h >
+#include < Bluepad32.h >
+
+const int stepsPerRevolution = 2048;
+const int stepSize = floor(stepsPerRevolution/360);
+
+Stepper myStepper(stepsPerRevolution, D19, D5, D18, TX2);
+
+int32_t throttle; // 0 -> 1023
+int32_t brake; // 0 -> 1023
+
+void setup() {
+  Serial.begin(115200);
+
+  stepperSetup();
+
+  bluetoothSetup();
+}
+
+void drive() {
+  if (throttle > 100) {
+    myStepper.step(stepSize);
+  }
+
+  if (brake > 100) {
+    myStepper.step(-stepSize);
+  }
+
+  if (!(throttle > 100 || brake > 100)) {
+    driveAllLow(IN1, IN2, IN3, IN4);
+  }
+}
+
+void loop() {
+  drive();
+  
+  bool dataUpdated = BP32.update();
+
+  if (dataUpdated) processControllers();
+}
+                </pre>
+            </code>
+        </div>
+        <div class="card code-description autoShow">
+            <h3 class="subtitle">Code Description</h3>
+            <div id="code-desc">
+                <p>This code was written with the Arduino IDE and it uses both:</p>
+                <ul>
+                    <li>The Bluepad32.h library</li>
+                    <li>Arduino's Stepper.h library</li>
+                </ul>
+                <p>Define/Initialize variables.</p>
+                <p><kbd>setup()</kbd>:</p>
+                <ul>
+                    <li><kbd>Serial.begin(115200)</kbd>: Initialize serial interface</li>
+                    <li><kbd>stepperSetup()</kbd>: Setup the stepper motor (set initial motor speed)</li>
+                    <li><kbd>bluetoothSetup()</kbd>: Setup the microcontroller to properly connect and disconnect from BlueTooth Controllers</li>
+                </ul>
+                <p><kbd>loop()</kbd>:</p>
+                <ul>
+                    <li><kbd>drive()</kbd>: Drives based on the <kbd>throttle</kbd> and <kbd>brake</kbd> values</li>
+                    <li><kbd>dataUpdated</kbd>: Check if the microcontroller's Bluetooth data has changed since last update</li>
+                    <li><kbd>processControllers()</kbd>: Process altered (dataUpdated?) inputs from controllers to update the <kbd>throttle</kbd> and <kbd>brake</kbd> values</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="conclusion">
+        <h3 class="section-title autoShow">Conclusion / Future Plans</h3>
+        <div class="card autoShow conclusion-card">
+            <p>The Rat successfully drives using the Bluetooth connected XBox One controller powered by a 9V Battery.</p>
+            <p>I intend to get better wheels, axles, and gears.</p>
+            <p>My next iteration will incorporate tank controls (control left and right wheels with the left and right analog stick, respectively). This will require another motor and possibly an alternative power solution.</p>
+        </div>
+    </section>
+    
+    <a href="https://github.com/LP653/BT_RC_Car" target="_blank"><button class="projectButton git">
+        <img class="gitLogo" src="../../images/github-mark.png" />
+    </button></a>
+</body>
+</html>

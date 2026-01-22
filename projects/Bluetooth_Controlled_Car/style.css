@@ -1,0 +1,90 @@
+@import url('../projectStyles.css');
+
+.description {
+    margin: 275px 0 150px 0;
+    width: 95%;
+    height: 160vh;
+}
+
+.parts {
+    height: 125vh;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+
+.parts-cards {
+    grid-template-columns: 25% 25% 25%;
+}
+
+.part {
+    padding-bottom: 50px;
+}
+
+.part-img {
+    height: 100%;
+}
+
+.parts-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#car-parts {
+    grid-template-columns: 25% 25%;
+}
+
+.wiring {
+    margin-top: 50px;
+}
+
+.pseudocode {
+    height: 285vh;
+    margin-top: 25px;
+    gap: 0;
+}
+
+.pseudocode > .section-title {
+    padding-bottom: 0;
+}
+
+code {
+    overflow-x: scroll;
+}
+
+.code-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    width: 95%;
+    max-width: 850px;
+}
+
+.code-description {
+    margin-top: 50px;
+    width: 95%;
+    max-width: 850px;
+}
+
+.code {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    margin-top: 25px;
+    width: 95%;
+    max-width: 850px;
+}
+
+#code-desc {
+    text-align: left;
+}
+
+.conclusion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 950px;
+}

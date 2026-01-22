@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../projectStyles.css">
+    <script type="text/javascript" src="../../darkmode.js" defer></script>
+    <title>8x8 LED Array</title>
+</head>
+<body>
+    <div class="header">
+        <button id="theme-switch">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+        </button>
+        <h1 class="project-title">8x8 LED Array</h1>
+        <div class="nav-container">
+            <input class="checkbox" type="checkbox" name="menu_check" id="menu_check" />
+            <div class="navbar">
+                <div class="one-bar"></div>
+                <div class="two-bar"></div>
+                <div class="three-bar"></div>
+            </div>
+            <div class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li class="submenu-trigger"><a href="../../index.html#projects">Projects</a></li>
+                <ul class="project-submenu">
+                    <li><a href="../LED_Array/la.html">LED Array -</a></li>
+                    <li><a href="../OLED_Function_Display/ofd.html">OLED -</a></li>
+                    <li><a href="../Bluetooth_Controlled_Car/bcc.html">RC Car -</a></li>
+                </ul>
+                <li><a href="../../index.html#experience">Experience</a></li>
+            </div>
+        </div>
+    </div>
+    
+    <section class="description">
+        <h3 class="section-title">Description</h3>
+        <div class="card description-card">
+            <div class="img-holder"><img class="demo" src="images/explosion.gif"/></div>
+            <p>This was my first personal project. The original from 2022 used an Arduino Uno but was taken apart in a move, so this a recreation.</p>
+            <p>It is a row of 8x8 LED arrays that can display any number of images (honestly just bitmaps) or animations.</p>
+            <p>Originally, I made a circuit that uses an audio signal from an aux cable as the input for the arrays to display over time using an opamp circuit.</p>
+            <p>It currently only works on one array but it would not be difficult to scale the program to a variable number of rows and columns of arrays...arrays of arrays if you will ;)</p>
+        </div>
+        <div class="card inspiration-card autoShow">
+            <h3 class="subtitle">Inspiration</h3>
+            <p>This project is largely inspired by a video by <b>0612 TV w/ NERDFirst</b></p>
+            <img src="images/youtube_thumbnail.png" class="inspo-img"/>
+            <p>In addition to the following article: <a href="https://docs.freenove.com/projects/fnk0082/en/latest/fnk0082/codes/C/16_74HC595_%26_LED_Matrix.html">Freenove LED Matrix</a></p>
+            <img src="images/article_screenshot.png" class="inspo-img"/>
+        </div>
+    </section>
+
+    <section class="parts autoShow">
+        <h3 class="section-title">Parts List</h3>
+        <div class="parts-cards">
+            <div class="part card">
+                <p class="part-label">ESP32 Devkit V1</p>
+                <img src="images/esp32_store_pic.png" class="part-img" />
+            </div>
+            <div class="part card">
+                <p class="part-label">8x8 LED Array</p>
+                <img src="images/led_array.png" class="part-img"/>
+            </div>
+            <div class="part card">
+                <p class="part-label">8x 220Ω Resistors</p>
+                <img src="images/resistor.png" class="part-img" />
+            </div>
+            <div class="part card">
+                <p class="part-label">2x 74HC595 Shift Register</p>
+                <img src="images/74HC595-Serial-In-Parallel-Out-Shift-Register.png" class="part-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="wiring autoShow">
+        <h3 class="section-title">Wiring</h3>
+        <div class="pinouts">
+            <div class="pinout card autoShow">
+                <p class="pinout-label subtitle">ESP32 Pinout</p>
+                <img class="pinout-image" src="images/ESP32-Board-PINOUT-with-30-pins.png"/>
+            </div>
+            <div class="pinout card autoShow">
+                <p class="pinout-label subtitle">74HC595 Pinout</p>
+                <img class="pinout-image" src="images/595pinout.png"/>
+            </div>
+            <div class="pinout card autoShow">
+                <p class="pinout-label subtitle">8x8 LED Array</p>
+                <img class="pinout-image" src="images/led_array_pinout.png"/>
+            </div>
+        </div>
+        <div class="wiring-diagram card autoShow">
+            <p class="wiring-label subtitle">Overall Wiring Diagram</p>
+            <img class="wiring-image" src="images/Wiring_Diagram.png" />
+            <img class="wiring-image" src="images/overall_wiring.png" />
+        </div>
+    </section>
+
+    <section class="pseudocode autoShow">
+        <h3 class="section-title" id="pseudo-title">Psuedocode</h3>
+        <div class="card code">
+            <code markup="tt">
+                <pre>
+int m = 8; // # cols
+int n = 8; // # rows
+uint8_t V[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+void displayVerticalImage(uint8_t V[]) {
+    int frame_count = 0;
+    int frame_iterations = 450;
+    while (frame_count < frame_iterations) {
+         for (int i = 0; i < m; i++) {
+             digitalWrite(latchPin, LOW);
+            shiftOut(128 >> i); // row
+            shiftOut(~(V[i])); // column
+            digitalWrite(latchPin, HIGH);
+        }
+        frame_count++;
+    }
+    frame_count = 0;
+}
+                </pre>
+            </code>
+        </div>
+        <div class="card code-description">
+            <h3 class="subtitle">Code Description</h3>
+            <div>
+                <p>The heart of the code is the <kbd>displayVerticalImage()</kbd> and <kbd>displayHorizontalImage()</kbd> function. They work like different orientations of rolling shutters, only displaying one column at a time. With a very high frequency, this effect is invisible to the eye.</p>
+                <p>Images to be displayed are converted into bit representations as integers and are shifted through the shift registers to complete circuits for each LED pixel.</p>
+                <p>I then created some <kbd>[]_signal()</kbd> functions for various displays of simulated signals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="conclusion autoShow">
+        <h3 class="section-title">Conclusion / Future Plans</h3>
+        <div class="card">
+            <p>I intend to use the program's capability to display a simulated signal to read an audio signal. I plan on using an opamp along with a voltage divider to convert the audio signal to a range the microcontroller can safely read.</p>
+            <p>After an audio signal can be displayed, I plan on implementing an FFT algorithm to display a signal's real-time frequency data.</p>
+            <p>It would be fun to then add a speaker output and maybe BlueTooth connection. Then I would put it all in a vintage radio style enclosure to listen to music/podcasts/etc. and watch the audio signal or real-time data.</p>
+        </div>
+    </section>
+
+    <a href="https://github.com/LP653/Programmable-LED-Array" target="_blank"><button class="projectButton git">
+        <img class="gitLogo" src="../../images/github-mark.png" />
+    </button></a>
+</body>
+</html>

@@ -1,3 +1,5 @@
+<!-- Make sure to check against https://www.w3schools.com/howto/howto_website_create_portfolio.asp -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,41 +10,156 @@
     <script type="text/javascript" src="darkmode.js" defer></script>
 </head>
 <body>
-    <button id="theme-switch">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-    </button>
     
-    <!-- Make profile image grow into blurry background at Overview and then fade to blue color at end of webpage -->
-    <section class="opening-screen">
-        <h1>Alexis Pope</h1>
-        <img class="profile-image" src="./images/profile_image.jpg"/>
-    </section>
-
-    <!-- Figure out how to make light/dark mode buttons up top -->
+    <img class="profile-image" src="./images/profile_image.jpg"/>
+    <div class="header">
+        <button id="theme-switch">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+        </button>
+        <h1 class="title">Alexis Pope</h1>
+        <div class="nav-container">
+            <input class="checkbox" type="checkbox" name="menu_check" id="menu_check" />
+            <div class="navbar">
+                <div class="one-bar"></div>
+                <div class="two-bar"></div>
+                <div class="three-bar"></div>
+            </div>
+            <div class="menu">
+                <li><a href="./index.html">Home</a></li>
+                <li class="submenu-trigger"><a href="./index.html#projects">Projects</a></li>
+                <ul class="project-submenu">
+                    <li><a href="./projects/LED_Array/la.html">LED Array -</a></li>
+                    <li><a href="./projects/OLED_Function_Display/ofd.html">OLED -</a></li>
+                    <li><a href="./projects/Bluetooth_Controlled_Car/bcc.html">RC Car -</a></li>
+                </ul>
+                <li><a href="./index.html#experience">Experience</a></li>
+            </div>
+        </div>
+    </div>
 
     <section class="overview-section autoShow">
-        <h3 class="overTitle">Overview</h3> <!--hidden-->
-        <p class="blurb"> <!--hidden-->
+        <h3 class="overTitle">Overview</h3>
+        <p class="blurb">
             I am a lifelong learner and passionate tinkerer.
-            I have two B.S. degrees in Electrical Engineering and Computational Physics, and have passed the F.E. ECE exam.
+            After graduating with two B.S. degrees in Electrical Engineering and Computational Physics I passed the F.E. ECE exam.
             Also a passionate musician, I have projects in the work that overlap these fields (i.e. oscilloscope music, spectrum analyzers).
+        </p>
+        <p class="blurb">
+            Since graduating, I have been working on personal projects.
             I began working with Arduino but have migrated to using ESP32 DevKits for my microcontroller projects.
-            I plan on learning Rust soon to program the ESP32's in future projects.
+            I plan on learning Rust soon to program the ESP32's in future projects, as well as moving away from micrcontroller-centered projects.
         </p>
     </section>
 
-    <section class="project-section autoShow">
+    <!-- When above sections clicking on them through the nav menu brings you to their translated position -->
+    <section id="projects" class="project-section autoShow">
         <h3 class="projTitle">Projects</h3>
         <section class="project-cards">
-            <div class="card">
-                <p>8x8 LED Array (Arduino)</p>
+            <div class="project-right fadeUp project">
+                <div class="project-label project-card">
+                    <p class="project-title"><b>8x8 LED Array</b></p>
+                    <p class="project-date"><i><b>July 2024</b></i></p>
+                    <p class="project-description">Originally for an Arduino Uno but now using an ESP32.</p>
+                </div>
+                <a href="./projects/LED_Array/la.html"><div class="project-img card">
+                    <img class="project-gif" src="./projects/LED_Array/images/explosion.gif">
+                </div></a>
             </div>
-            <div class="card">
-                <p>128x64 OLED Function Display (ESP32)</p>
+            <div class="project-left fadeUp project">
+                <a href="./projects/OLED_Function_Display/ofd.html"><div class="project-img card" id="left-project-img">
+                    <img class="project-gif" src="./projects/OLED_Function_Display/images/oled_demo.gif">
+                </div></a>
+                <div class="project-label project-card" id="left-project-label">
+                    <p class="project-title"><b>128x64 OLED Function Display</b></p>
+                    <p class="project-date"><i><b>May 2025</b></i></p>
+                    <p class="project-description">Using an ESP32 to display functions with frequency and phase parameters.</p>
+                </div>
             </div>
-            <div class="card">
-                <p>Bluetooth Controlled Car (ESP32)</p>
+            <div class="project-right fadeUp project">
+                <div class="project-label project-card">
+                    <p class="project-title"><b>Bluetooth Controlled Car</b></p>
+                    <p class="project-date"><i><b>July 2025</b></i></p>
+                    <p class="project-description">An impromptu RC car that was to be used for a musical but now lives on as The Rat.</p>
+                </div>
+                <a href="./projects/Bluetooth_Controlled_Car/bcc.html"><div class="project-img card">
+                    <img class="project-gif" src="./projects/Bluetooth_Controlled_Car/images/demo.gif">
+                </div></a>
+            </div>
+        </section>
+    </section>
+
+    <section id="experience" class="experience-section autoShow">
+        <h3 class="expTitle">Experience</h3>
+        <section class="experience-cards">
+            <div class="experience-card card fadeUp">
+                <p class="job-title"><b>Math and Physics Tutor</b></p>
+                <p class="job-date-location"><i>August 2021 - December 2023</i> | <i>Eastern Illinois University</i></p>
+                <div class="job-blurb">
+                    <div class="job-description">
+                        <p>I first tutored student athletes through the athletic department for a semester in mathematics, typically Calculus 1.</p>
+                        <p>I then pivoted to tutor for the physics department, typically for introductory physics 1 and 2.</p>
+                        <p>I did not get to tutor any students in upper-level physics or electrical engineering courses, but I am very passionate about those subjects.</p>
+                    </div>
+                    <div class="job-skills">
+                        <p>I tutored the following subjects:</p>
+                        <ul class="skill-list">
+                            <li>Calculus 1</li>
+                            <li>Electrodynamics</li>
+                            <li>Physics of Sound and Music</li>
+                            <li>Thermodynamics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-card card fadeUp" id="psu-exp-card">
+                <p class="job-title"><b>Research Intern</b></p>
+                <p class="job-date-location"><i>Summer of 2023</i> | <i>Penn State University</i></p>
+                <div class="job-blurb"> <!-- This div is to have the description and skills side by side...so it doesn't take up all the screen -->
+                    <div class="job-description">
+                        <p>I researched 2-Dimensional Semiconductors with Dr. Saptarshi Das's research team under the mentorship of Rahul Pendurthi and Darsith Jayachandran.</p>
+                        <p>We were researching how ammonia annealing would affect 2D MOSFETs in collaboration with Dr. Joan Redwing's team.</p>
+                        <p>The Redwing team grew and treated (ammonia annealed) the 2D Semiconductor films on a sapphire substrate.</p>
+                        <p>We (in the Das team) took those grown films and transfered them onto silica substrates and developed them into 2D MOSFETs.</p>
+                        <p>We found that the ammonia annealing damaged the 2D film, as very few of the treated transistors functioned, and those that did functioned poorly.</p>
+                        <p>While the research itself was unsuccessful, I was able to get a better grasp on nanoscale devices and VLSI fundamentals, as well as using exotic materials with state-of-the-art machinery.</p>
+                    </div>
+                    <div class="job-skills" id="psu-exp">
+                        <div class="psu-exp-sec">
+                            <p class="skill-label">I was trained on and independently prepared and operated machinery for:</p>
+                            <ul class="skill-list" id="psu-skill-list">
+                                <li>Optical Lithography</li>
+                                <li>E-Beam Evaporation</li>
+                                <li>Dry and Wet Spin Benches</li>
+                                <li>Characterization of nanoscale devices</li>
+                            </ul>
+                        </div>
+                        <div class="psu-exp-sec">
+                            <p class="skill-label">I also shadowed and assisted my mentors in:</p>
+                            <ul class="skill-list" id="psu-skill-list">
+                                <li>E-beam lithography</li>
+                                <li>RIE (Reactive-Ion Etching)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-card card fadeUp">
+                <p class="job-title"><b>Box Office Manager</b></p>
+                <p class="job-date-location"><i>August 2025 - Current</i> | <i>Doudna Fine Arts Center</i></p>
+                <div class="job-blurb">
+                    <div class="job-description">
+                        <p>As Box Office Manager, I oversaw day-to-day Box Office operations and assisted the Director of Programming, Publicity, and Promotion.</p>
+                        <p>This includes writing the weekly newsletter, working with the Social Media student worker to promote Doudna shows and events, in addition to researching possible artists for future years.</p>
+                    </div>
+                    <div class="job-skills">
+                        <p>Some of the highlights of this position has been:</p>
+                        <ul class="skill-list">
+                            <li>Planning and coordinating the <i>Doudna Fun Facts</i> series with the Social Media student worker</li>
+                            <li>Taking care of hospitality for artists.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </section>
@@ -50,7 +167,6 @@
     <section class="contact-section">
         <h3 class="contactTitle">Links / Contact</h3>
         <section class="contact-cards">
-            <!-- Make buttons function as links rather than embedded links -->
             <a href="https://github.com/LP653" target="_blank"><button class="contactButton git">
                 <img class="gitLogo" src="./images/github-mark.png" />
             </button></a>
