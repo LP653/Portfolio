@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="../../darkmode.js" defer></script>
+    <title>Cat Laser Pointer | Alexis Pope Projects</title>
+</head>
+<body>
+    <div class="header">
+        <button id="theme-switch">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+        </button>
+        <h1 class="project-title">Cat Laser Pointer</h1>
+        <div class="nav-container">
+            <input class="checkbox" type="checkbox" name="menu_check" id="menu_check" />
+            <div class="navbar">
+                <div class="one-bar"></div>
+                <div class="two-bar"></div>
+                <div class="three-bar"></div>
+            </div>
+            <div class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li class="submenu-trigger"><a href="../../index.html#projects">Projects</a></li>
+                <ul class="project-submenu">
+                    <li><a href="../LED_Array/la.html">LED Array -</a></li>
+                    <li><a href="../OLED_Function_Display/ofd.html">OLED -</a></li>
+                    <li><a href="../Bluetooth_Controlled_Car/bcc.html">RC Car -</a></li>
+                    <li><a href="./lp.html">Laser Pointer -</a></li>
+                </ul>
+                <li><a href="../../index.html#experience">Experience</a></li>
+            </div>
+        </div>
+    </div>
+
+    <section class="description">
+        <h3 class="section-title">Description</h3>
+        <div class="card description-card">
+            <div class="img-holder"><img class="demo" src="images/gifs/Polar Circle demo.gif"></div>
+            <p>This is a project for my ESP32 to control two SG90 servo motors connected to a laser pointer.</p>
+            <p>It can be wirelessly controlled through Bluetooth using an XBox controller, in addition to autonomously "animating" various functions.</p>
+            <p>It currently uses a laser pointer from Amazon, held by a 3D print like a microphone clip.</p>
+            <div class="grid-pics">
+                <img src="" class="desc-pic"/>
+                <img src="" class="desc-pic"/>
+                <img src="" class="desc-pic"/>
+                
+                <img src="" class="desc-pic"/>
+                <img src="" class="desc-pic"/>
+                <img src="" class="desc-pic"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="parts autoShow">
+        <h3 class="section-title autoShow">Parts List</h3>
+        <section class="autoShow parts-section">
+            <p class="subtitle autoShow">Main Components</p>
+            <div class="parts-cards autoShow">
+                <div class="autoShow part-layer">
+                    <div class="part card">
+                        <p>ESP32 Devkit V1 DOIT</p>
+                        <img src="images/product_images/esp32_store_pic.png" class="part-img" />
+                    </div>
+                    <div class="part card">
+                        <p>2x SG90 Servo Motor</p>
+                        <img src="images/product_images/servo.png" class="part-img" />
+                    </div>
+                </div>
+                <div class="autoShow part-layer">
+                    <div class="part card">
+                        <p>Laser Pointer</p>
+                        <img src="images/product_images/laser_pointer.png" class="part-img" />
+                    </div>
+                    <div class="part card">
+                        <p>3D Printable Body</p>
+                        <img src="images/all_together.png" class="part-img" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="wiring autoShow">
+        <h3 class="section-title">Wiring</h3>
+        <div class="pinouts">
+            <div class="pinout card autoShow">
+                <p class="pinout-label subtitle">ESP32 Pinout</p>
+                <img class="pinout-image" src="images/pinouts/ESP32-Board-PINOUT-with-30-pins.png"/>
+            </div>
+            <div class="pinout card autoShow">
+                <p class="pinout-label subtitle">SG90 Servo Motors Pinout</p>
+                <img class="pinout-image" src="images/pinouts/servo.png"/>
+            </div>
+        </div>
+        <div class="wiring-diagram card autoShow">
+            <p class="wiring-label subtitle">Overall Wiring Diagram</p>
+            <img class="wiring-image" src="images/all_together.png" />
+        </div>
+    </section>
+
+    <section class="pseudocode autoShow">
+        <h3 class="section-title autoShow">Psuedocode</h3>
+        <div class="card code autoShow">
+            <p class="">The program is built around the <kbd>controllerMode()</kbd> function, which allows the XBox controller decide what mode to be in.</p>
+            <code markup="tt">
+                <pre>
+int modes = 5;
+char* mode_arr[] = {"Direct Control", "Autonomous Circle", "Autonomous Polar Circle", "8", "Cardiod"};
+void controllerMode() {
+  if (x_button) { // Change mode if X button is pressed
+    if ((mode < modes-1) && (mode >= 0)) mode++;
+    else mode = 0;
+    t = 0;
+    Serial.print("Mode ");
+    Serial.print(mode);
+    Serial.print(": ");
+    Serial.println(mode_arr[mode]);
+    delay(2000);
+  }
+
+  switch (mode) {
+    case 0: // Direct mapping of joystick positions (x, y) to laser angle (yaw, pitch)
+      directControl();
+      break;
+    case 1: // Circle drawn with Cartesian coordinates
+      drawCircle();
+      break;
+    case 2: // Circle drawn with polar equation
+      drawPolarCircle();
+      break;
+    case 3: // 8 drawn with polar coordinates
+      draw8();
+      break;
+    case 4: // Cardiod drawn with polar coordinates
+      drawCardiod();
+      break;
+  }
+
+  if (BP32.update()) processControllers();
+                </pre>
+            </code>
+            <div class="code-description">
+                <h3 class="subtitle">Code Description</h3>
+                <div id="code-desc">
+                    View the corresponding GitHub <a href="https://github.com/LP653/Cat_Laser" target="_blank">README</a> for a more in depth overview of the program and how its development.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="conclusion">
+        <h3 class="section-title autoShow">Conclusion / Future Plans</h3>
+        <div class="card autoShow conclusion-card">
+            <p>
+                I want to make a function that uses a controller joystick (OR iterate on the pointer's previous coordinates) to "shift" the pointer's coordinates. I am fairly certain this will require a rewrite of the <kbd>Servo.h</kbd> header file (or at least its functions) for more precise control, to move the laser pointer slowly and accurately.
+            </p>
+            <p>
+                I also need to make an algorithm to translate between (x,y) coordinates to (yaw,pitch) coordinates to have a non-curved display on the floor. I believe that some linear algebra will do so but that will be adequate.
+            </p>
+            <p>
+                My next iteration of this will be an "initial product launch", that can be recreated by / shipped to customers with instructional videos included. I plan on then shipping out test kits to friends and family. This product will include:
+            </p>
+            <ul>
+                <li>New <kbd>step()</kbd> method</li>
+                <li>New functions (cardioid, petal pattern (arbitrary amount of petals), etc.)</li>
+                <li>A laser diode controlled by the microcontroller</li>
+                <li>Website to update the function of the robot (alternative to the controller)</li>
+                    <li>This should include a "schedule" capability to turn on the laser pointer at certain times (i.e. occupy the cats at the break of dawn so they don't wake me up :) )</li>
+                <li>Redesigned 3D Models to be a sleeker "product"</li>
+            </ul>
+            <p>
+                After all that, I plan on integrating a camera and Real-Time Object Recognition software to identify cats and their behavior. Then develop a reinforcement model to autonomously "run away/tease" the cats exactly how they like.
+            </p>
+        </div>
+    </section>
+    
+    <a href="https://github.com/LP653/BT_RC_Car" target="_blank"><button class="projectButton git">
+        <img class="gitLogo" src="../../images/github-mark.png" />
+    </button></a>
+</body>
+</html>

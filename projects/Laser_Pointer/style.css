@@ -1,0 +1,16 @@
+@import url('../projectStyles.css');
+
+.parts-cards {
+    display: grid;
+    grid-template-rows: 25% 25%;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.part-layer {
+    display: grid;
+    grid-template-columns: 25% 25%;
+    gap: 2.5rem;
+    justify-content: center;
+}

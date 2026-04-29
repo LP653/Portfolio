@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="../../darkmode.js" defer></script>
-    <title>BlueTooth Remoted Controlled Car</title>
+    <title>BlueTooth Remoted Controlled Car | Alexis Pope Projects</title>
 </head>
 <body>
     <div class="header">
@@ -28,6 +28,7 @@
                     <li><a href="../LED_Array/la.html">LED Array -</a></li>
                     <li><a href="../OLED_Function_Display/ofd.html">OLED -</a></li>
                     <li><a href="../Bluetooth_Controlled_Car/bcc.html">RC Car -</a></li>
+                    <li><a href="../Laser_Pointer/lp.html">Laser Pointer -</a></li>
                 </ul>
                 <li><a href="../../index.html#experience">Experience</a></li>
             </div>
@@ -40,13 +41,17 @@
             <div class="img-holder"><img class="demo" src="images/demo.gif"></div>
             <p>This is my prototype for an RC Car named: <b>The Rat</b>.</p>
             <div class="grid-pics">
-                <img src="" class="desc-pic"/>
-                <img src="" class="desc-pic"/>
-                <img src="" class="desc-pic"/>
+                <img src="images/board_right.png" class="desc-pic"/>
+                <img src="images/rear.png" class="desc-pic"/>
+                <img src="images/motor_left.png" class="desc-pic"/>
                 
-                <img src="" class="desc-pic"/>
-                <img src="" class="desc-pic"/>
-                <img src="" class="desc-pic"/>
+                <div></div>
+                <img src="images/bottom.png" class="desc-pic"/>
+                <div></div>
+
+                <img src="images/board_right.png" class="desc-pic"/>
+                <img src="images/front.png" class="desc-pic"/>
+                <img src="images/motor_right.png" class="desc-pic"/>
             </div>
             <p>The car's axle uses gears to rotate with a <b>28BYJ-48 5V Stepper Motor</b> and its <b>ULN2003 motor driver</b> which is controlled using an <b>ESP32 Devkit V1 DOIT</b>.</p>
             <p>It was assembled by <a href="" target="_blank">Estela Guzman</a>. The body is built out of wood and extremities (u-bolts under the body securing the axles, microcontroller, motor, and driver) are screwed/bolted on to secure it. The 9V is not tied down to make change out easy.</p>
@@ -72,7 +77,7 @@
                     <img src="images/esp32_store_pic.png" class="part-img" />
                 </div>
                 <div class="part card">
-                    <p>Stepper Motor</p>
+                    <p>28BYJ Stepper Motor</p>
                     <img src="images/Stepper_motor_store.png" class="part-img" />
                 </div>
                 <div class="part card">
@@ -182,28 +187,28 @@ void loop() {
 }
                 </pre>
             </code>
-        </div>
-        <div class="card code-description autoShow">
-            <h3 class="subtitle">Code Description</h3>
-            <div id="code-desc">
-                <p>This code was written with the Arduino IDE and it uses both:</p>
-                <ul>
-                    <li>The Bluepad32.h library</li>
-                    <li>Arduino's Stepper.h library</li>
-                </ul>
-                <p>Define/Initialize variables.</p>
-                <p><kbd>setup()</kbd>:</p>
-                <ul>
-                    <li><kbd>Serial.begin(115200)</kbd>: Initialize serial interface</li>
-                    <li><kbd>stepperSetup()</kbd>: Setup the stepper motor (set initial motor speed)</li>
-                    <li><kbd>bluetoothSetup()</kbd>: Setup the microcontroller to properly connect and disconnect from BlueTooth Controllers</li>
-                </ul>
-                <p><kbd>loop()</kbd>:</p>
-                <ul>
-                    <li><kbd>drive()</kbd>: Drives based on the <kbd>throttle</kbd> and <kbd>brake</kbd> values</li>
-                    <li><kbd>dataUpdated</kbd>: Check if the microcontroller's Bluetooth data has changed since last update</li>
-                    <li><kbd>processControllers()</kbd>: Process altered (dataUpdated?) inputs from controllers to update the <kbd>throttle</kbd> and <kbd>brake</kbd> values</li>
-                </ul>
+            <div class="code-description">
+                <h3 class="subtitle">Code Description</h3>
+                <div id="code-desc">
+                    <p>This code was written with the Arduino IDE and it uses both:</p>
+                    <ul>
+                        <li>The Bluepad32.h library</li>
+                        <li>Arduino's Stepper.h library</li>
+                    </ul>
+                    <p>Define/Initialize variables.</p>
+                    <p><kbd>setup()</kbd>:</p>
+                    <ul>
+                        <li><kbd>Serial.begin(115200)</kbd>: Initialize serial interface</li>
+                        <li><kbd>stepperSetup()</kbd>: Setup the stepper motor (set initial motor speed)</li>
+                        <li><kbd>bluetoothSetup()</kbd>: Setup the microcontroller to properly connect and disconnect from BlueTooth Controllers</li>
+                    </ul>
+                    <p><kbd>loop()</kbd>:</p>
+                    <ul>
+                        <li><kbd>drive()</kbd>: Drives based on the <kbd>throttle</kbd> and <kbd>brake</kbd> values</li>
+                        <li><kbd>dataUpdated</kbd>: Check if the microcontroller's Bluetooth data has changed since last update</li>
+                        <li><kbd>processControllers()</kbd>: Process altered (dataUpdated?) inputs from controllers to update the <kbd>throttle</kbd> and <kbd>brake</kbd> values</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

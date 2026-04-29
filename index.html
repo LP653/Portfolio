@@ -32,6 +32,7 @@
                     <li><a href="./projects/LED_Array/la.html">LED Array -</a></li>
                     <li><a href="./projects/OLED_Function_Display/ofd.html">OLED -</a></li>
                     <li><a href="./projects/Bluetooth_Controlled_Car/bcc.html">RC Car -</a></li>
+                    <li><a href="./projects/Laser_Pointer/lp.html">Laser Pointer -</a></li>
                 </ul>
                 <li><a href="./index.html#experience">Experience</a></li>
             </div>
@@ -43,7 +44,7 @@
         <p class="blurb">
             I am a lifelong learner and passionate tinkerer.
             After graduating with two B.S. degrees in Electrical Engineering and Computational Physics I passed the F.E. ECE exam.
-            Also a passionate musician, I have projects in the work that overlap these fields (i.e. oscilloscope music, spectrum analyzers).
+            Also a passionate musician, I have projects in the works that overlap these fields (i.e. oscilloscope music, spectrum analyzers).
         </p>
         <p class="blurb">
             Since graduating, I have been working on personal projects.
@@ -58,7 +59,7 @@
         <section class="project-cards">
             <div class="project-right fadeUp project">
                 <div class="project-label project-card">
-                    <p class="project-title"><b>8x8 LED Array</b></p>
+                    <p class="project-title"><a href="./projects/LED_Array/la.html" class="project-link"><b>8x8 LED Array</b></a></p>
                     <p class="project-date"><i><b>July 2024</b></i></p>
                     <p class="project-description">Originally for an Arduino Uno but now using an ESP32.</p>
                 </div>
@@ -71,14 +72,14 @@
                     <img class="project-gif" src="./projects/OLED_Function_Display/images/oled_demo.gif">
                 </div></a>
                 <div class="project-label project-card" id="left-project-label">
-                    <p class="project-title"><b>128x64 OLED Function Display</b></p>
+                    <p class="project-title"><a href="./projects/OLED_Function_Display/ofd.html" class="project-link"><b>128x64 OLED Function Display</b></a></p>
                     <p class="project-date"><i><b>May 2025</b></i></p>
                     <p class="project-description">Using an ESP32 to display functions with frequency and phase parameters.</p>
                 </div>
             </div>
             <div class="project-right fadeUp project">
                 <div class="project-label project-card">
-                    <p class="project-title"><b>Bluetooth Controlled Car</b></p>
+                    <p class="project-title"><a href="./projects/Bluetooth_Controlled_Car/bcc.html" class="project-link"><b>Bluetooth Controlled Car</b></a></p>
                     <p class="project-date"><i><b>July 2025</b></i></p>
                     <p class="project-description">An impromptu RC car that was to be used for a musical but now lives on as The Rat.</p>
                 </div>
@@ -86,13 +87,23 @@
                     <img class="project-gif" src="./projects/Bluetooth_Controlled_Car/images/demo.gif">
                 </div></a>
             </div>
+            <div class="project-left fadeUp project">
+                <a href="./projects/Laser_Pointer/lp.html"><div class="project-img card" id="left-project-img">
+                    <img class="project-gif" src="./projects/Laser_Pointer/images/gifs/Polar Circle demo.gif">
+                </div></a>
+                <div class="project-label project-card" id="left-project-label">
+                    <p class="project-title"><a href="./projects/Laser_Pointer/lp.html" class="project-link"><b>Laser Pointer</b></a></p>
+                    <p class="project-date"><i><b>March 2026</b></i></p>
+                    <p class="project-description">Using an ESP32 and two SG90 servo motors to control a laser pointer's yaw and pitch angles.</p>
+                </div>
+            </div>
         </section>
     </section>
 
     <section id="experience" class="experience-section autoShow">
         <h3 class="expTitle">Experience</h3>
         <section class="experience-cards">
-            <div class="experience-card card fadeUp">
+            <div class="experience-card card fadeUp" id="tutor-card">
                 <p class="job-title"><b>Math and Physics Tutor</b></p>
                 <p class="job-date-location"><i>August 2021 - December 2023</i> | <i>Eastern Illinois University</i></p>
                 <div class="job-blurb">
@@ -144,19 +155,21 @@
                     </div>
                 </div>
             </div>
-            <div class="experience-card card fadeUp">
+            <div class="experience-card card fadeUp" id="bo-card">
                 <p class="job-title"><b>Box Office Manager</b></p>
                 <p class="job-date-location"><i>August 2025 - Current</i> | <i>Doudna Fine Arts Center</i></p>
                 <div class="job-blurb">
                     <div class="job-description">
-                        <p>As Box Office Manager, I oversaw day-to-day Box Office operations and assisted the Director of Programming, Publicity, and Promotion.</p>
-                        <p>This includes writing the weekly newsletter, working with the Social Media student worker to promote Doudna shows and events, in addition to researching possible artists for future years.</p>
+                        <p>As Box Office Manager, I oversaw day-to-day Box Office operations and assisted the Director of Programming, Publicity, and Promotion in facilitating all events in Doudna, including departmental (Music, Theatre), EIU, community, and premiere events.</p>
+                        <p>Some of the highlights of this position has been:</p>
                     </div>
                     <div class="job-skills">
-                        <p>Some of the highlights of this position has been:</p>
-                        <ul class="skill-list">
-                            <li>Planning and coordinating the <i>Doudna Fun Facts</i> series with the Social Media student worker</li>
-                            <li>Taking care of hospitality for artists.</li>
+                        <ul class="skill-list" id="doudna-skill-list">
+                            <li>Maintaining Front of House facilities (seating, lights, doors, etc.) for the Doudna Fine Arts Center.</li>
+                            <li>Assisting in producing and distributing promotional material, in collaboration with the Social Media student workerunder the Director of Publicity, Programming, and Promotion.</li>
+                            <li>Ensuring audiences are safe and have the best performance experience possible.</li>
+                            <li>Assisting in hospitality for artists with the Director of Publicity, Programming, and Promotion.</li>
+                            <li>Assist Backstage Doudna crew when necessary and continually communicate emergency procedures.</li>
                         </ul>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../projectStyles.css">
     <script type="text/javascript" src="../../darkmode.js" defer></script>
-    <title>8x8 LED Array</title>
+    <title>8x8 LED Array | Alexis Pope Projects</title>
 </head>
 <body>
     <div class="header">
@@ -28,6 +28,7 @@
                     <li><a href="../LED_Array/la.html">LED Array -</a></li>
                     <li><a href="../OLED_Function_Display/ofd.html">OLED -</a></li>
                     <li><a href="../Bluetooth_Controlled_Car/bcc.html">RC Car -</a></li>
+                    <li><a href="../Laser_Pointer/lp.html">Laser Pointer -</a></li>
                 </ul>
                 <li><a href="../../index.html#experience">Experience</a></li>
             </div>
@@ -92,7 +93,7 @@
         </div>
         <div class="wiring-diagram card autoShow">
             <p class="wiring-label subtitle">Overall Wiring Diagram</p>
-            <img class="wiring-image" src="images/Wiring_Diagram.png" />
+            <img class="wiring-drawing" src="images/Wiring_Diagram.png" />
             <img class="wiring-image" src="images/overall_wiring.png" />
         </div>
     </section>
@@ -122,8 +123,6 @@ void displayVerticalImage(uint8_t V[]) {
 }
                 </pre>
             </code>
-        </div>
-        <div class="card code-description">
             <h3 class="subtitle">Code Description</h3>
             <div>
                 <p>The heart of the code is the <kbd>displayVerticalImage()</kbd> and <kbd>displayHorizontalImage()</kbd> function. They work like different orientations of rolling shutters, only displaying one column at a time. With a very high frequency, this effect is invisible to the eye.</p>
